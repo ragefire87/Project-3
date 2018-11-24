@@ -183,10 +183,6 @@ def load_help_text():
     with open('help.txt') as f:
         return f.read()
 
-#print(query_bar(param = 'c1.Region', cmd='US'))
-#print(query_bar(rating = 'CocoaPercent', limit = 'ASC', value = 10))
-#print(query_bar(param = 'c1.Alpha2', cmd = 'US', rating = 'CocoaPercent',limit = 'ASC', value = 5)) #for sell_country to source_country, c1.Alpha2 changes to c2.Alpha2, sell_region to source_region is c1.Region to c2.Region
-
 
 def query_company(param = None, cmd = None, rating = 'round(Avg(Rating),1)', limit = 'DESC', value = 10):
     conn = sqlite3.connect(DBNAME)
@@ -223,10 +219,6 @@ def query_company(param = None, cmd = None, rating = 'round(Avg(Rating),1)', lim
         conn.close()
         return (results)
 
-#print(query_company(param = 'Countries.Region', command = 'Europe'))
-#print(query_company(rating = 'round(avg(CocoaPercent),1)',value = 8))
-#print(query_company(rating = 'round(avg(rating),1)',value = 8))
-#print(query_company(rating = 'count(Company)',value = 8))
 
 def query_countries(param = 'Bars.CompanyLocationId', cmd = None, rating = 'round(Avg(Rating),1)', limit = 'DESC', value = 10):
     conn = sqlite3.connect(DBNAME)
@@ -263,10 +255,6 @@ def query_countries(param = 'Bars.CompanyLocationId', cmd = None, rating = 'roun
         conn.close()
         return (results)
 
-#print(query_countries(param = "Bars.BroadBeanOriginId", cmd = "Asia"))
-#print(query_countries(cmd = "Asia"))
-#print(query_countries(param = 'Bars.BroadBeanOriginId', rating = 'count(Company)')) #showing by source instead of seller country
-#print(query_countries(rating = 'count(Company)'))
 
 def query_regions(param = 'Bars.CompanyLocationId', rating = 'round(Avg(Rating),1)', limit = 'DESC', value = 10):
     conn = sqlite3.connect(DBNAME)
@@ -286,9 +274,6 @@ def query_regions(param = 'Bars.CompanyLocationId', rating = 'round(Avg(Rating),
     conn.close()
     return (results)
 
-#print(query_regions(param = 'Bars.BroadBeanOriginId', rating = 'count(Company)'))
-#print(query_regions(rating = 'count(Company)'))
-#print(query_regions())
 
 def process_command(command):
     if len(command.split(' ')) == 1:
@@ -941,7 +926,7 @@ def interactive_prompt():
     command = ''
     command1 = ''
     while command != 'exit':
-        command1 = input('Enter a command: ')
+        command1 = input('Enter a command or input Help to view help text or Exit to quit: ')
         command = command1.lower()
         try:
             if command == 'help':
