@@ -1,0 +1,60 @@
+
+Functions available:
+
+Main Menu:
+
+0) Re-initialize database (for maintenance purpose): this would take awhile
+
+1) Search for a stock trading in Singapore Stock Exchange
+
+	Description: Search the database for stocks currently listed in the Singapore Stock Exchange through user’s input of a string be it partial or in full. (i.e.) 
+Searching for stock: Y VENTURES GROUP LTD. can be searched with partial words input such as “Venture”, “Group”, “Y Ven” etc…
+
+1.1) Add this stock to portfolio
+
+	Description: Add this stock to the portfolio database.
+
+1.2) Get latest news on this stock
+
+	Description: Search the web for the latest news on this particular stock.
+
+1.2.1) Open the browser to display selected news
+
+	Description: User to select the headline and the contents will open up through the browser.
+
+2) Access Stocks Portfolio
+
+	Description: Display a list of stocks that have been added to the portfolio.
+
+2.1) Remove a stock from portfolio
+
+	Description: Removes a stock from the portfolio. This action is irreversible.
+
+2.2) Analyze portfolio stocks
+
+	Description: To reveal sub-menu for obtaining financial data of the stocks in the portfolio
+
+2.2.1) Get financial data
+
+	Description: Lists key financials data such as Price-Earning ratio, Net Asset Value, Dividend Yield etc…
+
+2.2.1.1) Chart financials
+
+	Description: Plot the key financials of a selected stock with Plotly
+
+
+3) Help
+
+	Description: This Help file can be accessed from the main menu or by inputting “Help” in any sub-menu.
+
+
+4) Auto update all stocks prices inside portfolio
+
+	Description: This program pulls stocks information from a free website. 
+Therefore, stock financials update needs to be done manually from the limited information available on the non-subscriber page. 
+This function will auto-pull all latest information of stocks that have been searched before.
+
+5) Exit Program
+
+	Description: Exits the program
+
